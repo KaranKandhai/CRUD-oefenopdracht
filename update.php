@@ -37,8 +37,8 @@ try {
 ?>
 
 <form method="post" action="">
-    <label>Leerling</label>
-    <input type="" name="leerling" value="<?php echo $leerling; ?>"><br>
+    <label>Leerling: </label>
+    <?php echo $leerling; ?><br>
 
     <label>Vak</label>
     <input type="text" name="vak" value="<?php echo $vak; ?>"><br>
@@ -48,3 +48,5 @@ try {
 
     <input type="submit" name="verzenden" value="verzenden">
 </form>
+
+<a href="index.php">Terug naar index</a>

@@ -16,8 +16,9 @@ try {
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
+
 ?>
-<br
+<br>
 <a href="insert.php">Insert</a>
 
 <style type="text/css">
