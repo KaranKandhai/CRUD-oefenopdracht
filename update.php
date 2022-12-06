@@ -1,3 +1,4 @@
+
 <?php
 try {
     $db = new PDO("mysql:host=localhost;dbname=cijfersysteem", "root", "");
@@ -7,9 +8,9 @@ try {
         $vak = filter_input(INPUT_POST, "vak", FILTER_SANITIZE_STRING);
 
         $cijfer = filter_input(INPUT_POST, "cijfer", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $query = $db->prepare("UPDATE school SET leerling = :leerling, vak = :vak, cijfer = :cijfer WHERE id = :id");
+        $query = $db->prepare("UPDATE school SET vak = :vak, cijfer = :cijfer WHERE id = :id");
 
-        $query->bindParam("leerling", $leerling);
+        $query->bindParam("id", $_GET['id']);
         $query->bindParam("vak", $vak);
         $query->bindParam("cijfer", $cijfer);
         if ($query->execute()) {
